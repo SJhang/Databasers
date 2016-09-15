@@ -1,0 +1,19 @@
+CREATE database billboard;
+****
+CREATE TABLE song (
+  SongID int(11) NOT NULL AUTO_INCREMENT,
+  SongName varchar(255) DEFAULT NULL,
+  Artist varchar(255) DEFAULT NULL,
+  PRIMARY KEY (SongID)
+);
+***
+
+CREATE TABLE rank (
+WeekName varchar(255) NOT NULL,	
+SongID int(11) NOT NULL,
+CurrentRank int(11) NOT NULL,
+PRIMARY KEY(WeekName, SongID),
+FOREIGN KEY (SongID) REFERENCES song(SongID)
+);
+	
+***
